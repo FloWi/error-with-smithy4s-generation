@@ -1,17 +1,20 @@
 $version: "2.0"
 
-namespace openapi
+namespace spacetraders
 
 use alloy#dataExamples
 use alloy.openapi#openapiExtensions
 use error#NegotiateContractInputBody
 use error#RegisterInputBodyFaction
 use smithytranslate#contentType
+use alloy#simpleRestJson
+
 
 @auth([
     httpBearerAuth
 ])
 @httpBearerAuth
+@simpleRestJson
 service OpenapiService {
     operations: [
         AcceptContract
@@ -654,7 +657,6 @@ operation WarpShip {
 structure AcceptContract200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: AcceptContract200Body
 }
 
@@ -838,7 +840,6 @@ structure Cooldown {
 structure CreateChart201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: CreateChart201Body
 }
 
@@ -864,7 +865,6 @@ structure CreateChartInput {
 structure CreateShipShipScan201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: CreateShipShipScan201Body
 }
 
@@ -890,7 +890,6 @@ structure CreateShipShipScanInput {
 structure CreateShipSystemScan201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: CreateShipSystemScan201Body
 }
 
@@ -916,7 +915,6 @@ structure CreateShipSystemScanInput {
 structure CreateShipWaypointScan201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: CreateShipWaypointScan201Body
 }
 
@@ -942,7 +940,6 @@ structure CreateShipWaypointScanInput {
 structure CreateSurvey201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: CreateSurvey201Body
 }
 
@@ -968,7 +965,6 @@ structure CreateSurveyInput {
 structure DeliverContract200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: DeliverContract200Body
 }
 
@@ -991,7 +987,6 @@ structure DeliverContractInput {
     @required
     contractId: String
     @httpPayload
-    @contentType("application/json")
     body: DeliverContractInputBody
 }
 
@@ -1007,7 +1002,6 @@ structure DeliverContractInputBody {
 structure DockShip200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: DockShip200Body
 }
 
@@ -1060,7 +1054,6 @@ structure ExtractionYield {
 structure ExtractResources201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: ExtractResources201Body
 }
 
@@ -1085,7 +1078,6 @@ structure ExtractResourcesInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: ExtractResourcesInputBody
 }
 
@@ -1142,7 +1134,6 @@ structure Frame {
 structure FulfillContract200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: FulfillContract200Body
 }
 
@@ -1169,7 +1160,6 @@ structure FulfillContractInput {
 structure GetContract200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetContract200Body
 }
 
@@ -1188,7 +1178,6 @@ structure GetContractInput {
 structure GetContracts200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetContracts200Body
 }
 
@@ -1219,7 +1208,6 @@ structure GetContractsInput {
 structure GetFaction200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetFaction200Body
 }
 
@@ -1238,7 +1226,6 @@ structure GetFactionInput {
 structure GetFactions200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetFactions200Body
 }
 
@@ -1268,7 +1255,6 @@ structure GetFactionsInput {
 structure GetJumpGate200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetJumpGate200Body
 }
 
@@ -1292,7 +1278,6 @@ structure GetJumpGateInput {
 structure GetMarket200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetMarket200Body
 }
 
@@ -1315,7 +1300,6 @@ structure GetMarketInput {
 structure GetMyAgent200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetMyAgent200Body
 }
 
@@ -1327,7 +1311,6 @@ structure GetMyAgent200Body {
 structure GetMyShip200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetMyShip200Body
 }
 
@@ -1340,7 +1323,6 @@ structure GetMyShip200Body {
 structure GetMyShipCargo200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetMyShipCargo200Body
 }
 
@@ -1366,7 +1348,6 @@ structure GetMyShipInput {
 structure GetMyShips200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetMyShips200Body
 }
 
@@ -1397,7 +1378,6 @@ structure GetMyShipsInput {
 structure GetShipCooldown200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetShipCooldown200Body
 }
 
@@ -1416,7 +1396,6 @@ structure GetShipCooldownInput {
 structure GetShipNav200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetShipNav200Body
 }
 
@@ -1436,7 +1415,6 @@ structure GetShipNavInput {
 structure GetShipyard200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetShipyard200Body
 }
 
@@ -1460,7 +1438,6 @@ structure GetShipyardInput {
 structure GetStatus200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetStatus200Body
 }
 
@@ -1520,7 +1497,6 @@ structure GetStatus200BodyLinksItem {
 structure GetSystem200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetSystem200Body
 }
 
@@ -1540,7 +1516,6 @@ structure GetSystemInput {
 structure GetSystems200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetSystems200Body
 }
 
@@ -1571,7 +1546,6 @@ structure GetSystemsInput {
 structure GetSystemWaypoints200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetSystemWaypoints200Body
 }
 
@@ -1606,7 +1580,6 @@ structure GetSystemWaypointsInput {
 structure GetWaypoint200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: GetWaypoint200Body
 }
 
@@ -1630,7 +1603,6 @@ structure GetWaypointInput {
 structure Jettison200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: Jettison200Body
 }
 
@@ -1650,7 +1622,6 @@ structure JettisonInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: JettisonInputBody
 }
 
@@ -1678,7 +1649,6 @@ structure JumpGate {
 structure JumpShip200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: JumpShip200Body
 }
 
@@ -1699,7 +1669,6 @@ structure JumpShipInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: JumpShipInputBody
 }
 
@@ -1793,16 +1762,6 @@ structure MarketTransaction {
     timestamp: Timestamp
 }
 
-///
-@openapiExtensions(
-    "x-examples": {
-        "example-1": {
-            limit: 20
-            total: 6
-            page: 1
-        }
-    }
-)
 structure Meta {
     @required
     total: Integer
@@ -1815,7 +1774,6 @@ structure Meta {
 structure NavigateShip200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: NavigateShip200Body
 }
 
@@ -1839,7 +1797,6 @@ structure NavigateShipInput {
     shipSymbol: String
     ///
     @httpPayload
-    @contentType("application/json")
     body: NavigateShipInputBody
 }
 
@@ -1852,7 +1809,6 @@ structure NavigateShipInputBody {
 structure NegotiateContract201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: NegotiateContract201Body
 }
 
@@ -1872,14 +1828,12 @@ structure NegotiateContractInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: NegotiateContractInputBody
 }
 
 structure OrbitShip200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: OrbitShip200Body
 }
 
@@ -1904,7 +1858,6 @@ structure OrbitShipInput {
 structure PatchShipNav200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: PatchShipNav200Body
 }
 
@@ -1920,7 +1873,6 @@ structure PatchShipNavInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: PatchShipNavInputBody
 }
 
@@ -1931,7 +1883,6 @@ structure PatchShipNavInputBody {
 structure PurchaseCargo201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: PurchaseCargo201Body
 }
 
@@ -1955,7 +1906,6 @@ structure PurchaseCargoInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: PurchaseCargoInputBody
 }
 
@@ -1969,7 +1919,6 @@ structure PurchaseCargoInputBody {
 structure PurchaseShip201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: PurchaseShip201Body
 }
 
@@ -1990,7 +1939,6 @@ structure PurchaseShip201BodyData {
 
 structure PurchaseShipInput {
     @httpPayload
-    @contentType("application/json")
     body: PurchaseShipInputBody
 }
 
@@ -2011,7 +1959,6 @@ structure Reactor {
 structure RefuelShip200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: RefuelShip200Body
 }
 
@@ -2039,7 +1986,6 @@ structure RefuelShipInput {
 structure Register201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: Register201Body
 }
 
@@ -2065,7 +2011,6 @@ structure Register201BodyData {
 structure RegisterInput {
     ///
     @httpPayload
-    @contentType("application/json")
     body: RegisterInputBody
 }
 
@@ -2073,11 +2018,6 @@ structure RegisterInputBody {
     @required
     faction: RegisterInputBodyFaction
     /// How other agents will see your ships and information.
-    @dataExamples([
-        {
-            json: "BADGER"
-        }
-    ])
     @length(
         min: 3
         max: 14
@@ -2161,7 +2101,6 @@ structure ScannedWaypoint {
 structure SellCargo201 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: SellCargo201Body
 }
 
@@ -2185,7 +2124,6 @@ structure SellCargoInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: SellCargoInputBody
 }
 
@@ -2480,7 +2418,6 @@ structure ShipReactor {
 structure ShipRefine200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: ShipRefine200Body
 }
 
@@ -2517,7 +2454,6 @@ structure ShipRefineInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: ShipRefineInputBody
 }
 
@@ -2712,7 +2648,6 @@ structure TradeGood {
 structure TransferCargo200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: TransferCargo200Body
 }
 
@@ -2732,7 +2667,6 @@ structure TransferCargoInput {
     @required
     shipSymbol: String
     @httpPayload
-    @contentType("application/json")
     body: TransferCargoInputBody
 }
 
@@ -2748,7 +2682,6 @@ structure TransferCargoInputBody {
 structure WarpShip200 {
     @httpPayload
     @required
-    @contentType("application/json")
     body: WarpShip200Body
 }
 
@@ -2771,7 +2704,6 @@ structure WarpShipInput {
     shipSymbol: String
     ///
     @httpPayload
-    @contentType("application/json")
     body: WarpShipInputBody
 }
 
